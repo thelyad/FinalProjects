@@ -4,26 +4,23 @@ Created on Nov 18, 2017
 @author: ITAUser
 '''
 '''create a function that accepts the filename and character'''
-def countingLetters(filename, mychar):
+def calculate_char(filename, mychar):
     f = open(filename, 'r')
     count = 0;
-    run = True
-    while run:
-        letter = f.read(1) # 1 means read one character at a time
-        # Make the char lowercase by using the function char.lower()```
-        letter = letter.lower()
-        # If the character exists, note that if the character not exist, 
-            #char == "" is True ```
-        if letter == "":
-            break
-        else:
-            if letter == mychar:
-                count = count + 1
-            # If the character is equal to variable mychar```
-                # Update count by increament by 1 ```
+    isDone = False
+    while not isDone:
+        char=f.read(1)
+        char = char.lower()
+        if char == mychar: 
+            count = count +1;
+        if char == '':
+            isDone = True
     print(count)
-    #We finish the loop, output the result ```
-    
-countingLetters(filename="constitution.txt", mychar = "a")
-#countingLetters("constituion.txt", "a")
-
+import string
+#make a list with the alphabet
+letters = list(string.ascii_lowercase)
+#make a list to store the count of each letter
+#make loop that counts how many of each letter there are 
+#define the maximum value
+#find the letter at the max value
+#print the answer
